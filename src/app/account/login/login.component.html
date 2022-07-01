@@ -1,0 +1,35 @@
+<div class="card">
+  <h4 class="card-header">Login</h4>
+  <div class="card-body">
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
+      <div class="form-group">
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="credentials.username"
+               class="form-control" placeholder="User Name" required
+               #username="ngModel">
+        <div *ngIf="username.hasError('required')" class="alert alert-danger">
+          Username is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="credentials.password"
+               class="form-control" placeholder="Password" required
+               #password="ngModel">
+        <div *ngIf="username.hasError('required')" class="alert alert-danger">
+          Username is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button [disabled]="!invalidLogin" class="btn btn-primary">
+          <span *ngIf="!invalidLogin" class="spinner-border spinner-border-sm mr-1"></span>
+          Login
+        </button>
+        <a routerLink="../register" class="btn btn-link">Register</a>
+      </div>
+    </form>
+  </div>
+</div>
