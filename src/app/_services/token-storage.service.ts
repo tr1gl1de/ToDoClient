@@ -19,6 +19,18 @@ export class TokenStorageService {
     return localStorage.getItem(TOKEN_KEY);
   }
 
+  /**
+   * Return jwt token from local storage.
+   *
+   * @remarks
+   * This static method returned jwt token
+   *
+   * @returns accessToken
+   */
+  public static getToken(): string | null {
+    return localStorage.getItem(TOKEN_KEY);
+  }
+
   public saveRefreshToken(refreshToken: string): void {
     localStorage.removeItem(REFRESH_TOKEN_KEY);
     localStorage.setItem(REFRESH_TOKEN_KEY, refreshToken);
