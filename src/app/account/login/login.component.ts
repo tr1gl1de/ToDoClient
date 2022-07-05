@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     if (form.valid) {
-      this.authService.login('/api/user/authenticate', this.credentials)
+      this.authService.login('api/user/authenticate', this.credentials)
         .subscribe({
           next: (response: AuthenticatedResponse) => {
             const accessToken = response.accessToken;
