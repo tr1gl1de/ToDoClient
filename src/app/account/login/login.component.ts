@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm): void {
     if (form.valid) {
       this.authService.login('api/user/authenticate', this.credentials)
         .subscribe({
@@ -43,5 +43,10 @@ export class LoginComponent implements OnInit {
           error: (err: HttpErrorResponse) => this.invalidLogin = true
         });
     }
+  }
+
+  public redirectToRegisterPage(): void {
+    const regUrl: string = `account/register`;
+    this.router.navigate([regUrl]);
   }
 }
