@@ -1,8 +1,11 @@
-﻿<nav class="navbar navbar-expand navbar-dark bg-dark">
-  <div class="navbar-nav">
-    <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+﻿<nav class="navbar navbar-expand navbar-dark bg-dark navbar-">
+  <div class="navbar-nav d-flex">
+    <a class="nav-item nav-link" [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
     <a class="nav-item nav-link" routerLink="/notes" routerLinkActive="active">Notes</a>
-    <a *ngIf="!isUserAuthenticated()" class="nav-item nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+    <a *ngIf="!isUserAuthenticated()" class="nav-item nav-link"
+       [routerLink]="['/account/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Login</a>
+    <a *ngIf="!isUserAuthenticated()" class="nav-item nav-link"
+       [routerLink]="['/account/register']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Register</a>
     <a *ngIf="isUserAuthenticated()" class="nav-item nav-link" (click)="logOut()">Logout</a>
   </div>
 </nav>
