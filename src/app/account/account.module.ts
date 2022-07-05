@@ -4,11 +4,13 @@ import {AccountRoutingModule} from "./account-routing.module";
 import { LoginComponent } from './login/login.component';
 import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
