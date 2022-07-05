@@ -15,13 +15,7 @@ export class MenuComponent implements OnInit {
   }
 
   isUserAuthenticated(): boolean {
-    const token = this.tokenService.getToken();
-
-    if (token && !this.jwtHelper.isTokenExpired(token)){
-      return true;
-    }
-
-    return false;
+    return  this.tokenService.isUserAuthenticated();
   }
 
   logOut() {
