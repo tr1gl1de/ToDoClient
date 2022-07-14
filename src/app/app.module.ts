@@ -7,6 +7,7 @@ import {JwtModule, JwtModuleOptions} from "@auth0/angular-jwt";
 import {TokenStorageService} from "./_services/token-storage.service";
 import {AuthGuard} from "./_helpers/auth.guard";
 import {HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './home/home.component';
 
 export function tokenGetter() {
   return TokenStorageService.getToken();
@@ -24,6 +25,7 @@ const JWT_CONFIG: JwtModuleOptions = {
   declarations: [
     AppComponent,
     MenuComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

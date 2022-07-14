@@ -53,4 +53,11 @@ export class NoteService {
       this.reposExtensions.generateHeaders()
     );
   }
+
+  public getCountOfNotes(route: string): Observable<number> {
+    return this.http.get<number>(
+      this.reposExtensions.createCompleteRoute(route, this.envUrl.urlAddress),
+      this.reposExtensions.generateHeaders()
+    );
+  }
 }
